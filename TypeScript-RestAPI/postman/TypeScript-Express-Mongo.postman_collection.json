@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "67fe74da-a13e-4329-8fa3-091d3e0297de",
+		"name": "TypeScript-Express-Mongo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/api/v1/posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/v1/posts/awesome-blog-post-1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/posts/awesome-blog-post-1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						"awesome-blog-post-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/v1/posts/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Awesome Blog Post Title-6\",\n\t\"slug\": \"awesome-blog-post-6\",\n\t\"content\": \"This is the content of the awesome blog post\",\n\t\"featuredImage\": \"https://www.udemy.com/staticx/udemy/images/v6/default-meta-image.png\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/posts/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/v1/posts/awesome-blog-post",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Horrible Blog Post Title\",\n\t\"slug\": \"awesome-blog-post-5\",\n\t\"content\": \"This is the content of the awesome blog post\",\n\t\"featuredImage\": \"https://www.udemy.com/staticx/udemy/images/v6/default-meta-image.png\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/posts/awesome-blog-post-5",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						"awesome-blog-post-5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/v1/posts/awesome-blog-post-2",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/posts/awesome-blog-post-4",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"posts",
+						"awesome-blog-post-4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/v1/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/v1/users/mickey-mouse3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/users/mickey-mouse3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"mickey-mouse3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/v1/users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Mickey Mouse3\",\n\t\"username\": \"mickey-mouse3\",\n\t\"email\": \"mickey.mouse3@disney.com\",\n\t\"password\": \" minie\",\n\t\"posts\": [\"5c72f3e513e5f1342e3a1752\"]\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/v1/users/mickey-mouse",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Mickey Mouse update\",\n\t\"username\": \"mickey-mouse\",\n\t\"email\": \"mickey.mousexxx@disney.com\",\n\t\"password\": \" miniexxx\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/users/mickey-mouse",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"mickey-mouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/v1/users/mickey-mouse1",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/users/mickey-mouse1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"mickey-mouse1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

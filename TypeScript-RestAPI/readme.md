@@ -15,6 +15,8 @@ $ yarn run dev      (or you can use npm run dev)
 ```
 Note: The command will launch tsc-watch to monitor any typescript file changes. Any *.ts file change will trigger the tsc compilation and re-deployment of the application. 
 
+3. For manual testing, you can import a postman collection from the postman folder.
+
 ### For Production Environment Setup ###
 ---------------------
 To run the applications including the MongoDB in docker container:

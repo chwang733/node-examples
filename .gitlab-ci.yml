@@ -6,14 +6,26 @@ image: node:latest
 services:
   - mongo:latest
 
+stages:
+  - build
+  - package
+
 # This folder is cached between builds
 # http://docs.gitlab.com/ce/ci/yaml/README.html#cache
 cache:
   paths:
   - TypeScript-RestAPI/node_modules/
 
-test_async:
+build_code:
+  stage: build
   script:
    - cd TypeScript-RestAPI
    - npm install
    - npm run build
+
+package_code:
+  image: docker:stable
+  stage: package
+  script:
+    - docker info
+    - docker build -t test .

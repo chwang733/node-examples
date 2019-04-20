@@ -27,5 +27,6 @@ package_code:
   image: docker:stable
   stage: package
   script:
+    - cd TypeScript-RestAPI
     - docker info
     - docker build -t test .

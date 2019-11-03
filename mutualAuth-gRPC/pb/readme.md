@@ -1,5 +1,5 @@
-npm install -g grpc-tools
-npm install grpc_tools_node_protoc_ts --save-dev
+npm install grpc-tools -D
+npm install grpc_tools_node_protoc_ts -D
 
 #Generated Typescript
 grpc_tools_node_protoc --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts --ts_out=./src/pb/_generated  ./src/pb/*.proto

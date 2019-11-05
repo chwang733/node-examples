@@ -10,26 +10,33 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const messages = __importStar(require("./generated/pb/helloworld_pb"));
-const services = __importStar(require("./generated/pb/helloworld_grpc_pb"));
+const mrrMessages = __importStar(require("./generated/pb/mrr_pb"));
+const mrrServices = __importStar(require("./generated/pb/mrr_grpc_pb"));
+const hcMessages = __importStar(require("./generated/pb/healthcheck_pb"));
+const hcServices = __importStar(require("./generated/pb/healthcheck_grpc_pb"));
 const grpc = __importStar(require("grpc"));
 const fs_1 = __importDefault(require("fs"));
 /**
  * Implements the SayHello RPC method.
  */
-function sayHello(call, callback) {
-    var reply = new messages.HelloReply();
-    reply.setMessage("Hello " + call.request.getName());
+function sendMRR(call, callback) {
+    var reply = new mrrMessages.mrrResponse();
+    reply.setMessage("echo:" + call.request.getMessage());
     callback(null, reply);
 }
-// const certsDir = path.join(process.cwd(), "server-certs");
+function check(call, callback) {
+    var reply = new hcMessages.HealthCheckResponse();
+    reply.setStatus(hcMessages.HealthCheckResponse.ServingStatus.SERVING);
+    callback(null, reply);
+}
 /**
  * Starts an RPC server that receives requests for the Greeter service at the
  * sample server port
  */
 function main() {
     var server = new grpc.Server();
-    server.addService(services.GreeterService, { sayHello: sayHello });
+    server.addService(mrrServices.MRRService, { sendMRR: sendMRR });
+    server.addService(hcServices.HealthService, { check: check });
     // server.bind("0.0.0.0:50051", grpc.ServerCredentials.createInsecure());
     server.bind("0.0.0.0:50051", grpc.ServerCredentials.createSsl(fs_1.default.readFileSync("certs/server-certs/Group_Microservices.crt"), [{
             private_key: fs_1.default.readFileSync("certs/server-certs/myProcessor.com.key"),

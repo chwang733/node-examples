@@ -1,18 +1,24 @@
-import * as messages from "./generated/pb/helloworld_pb";
-import * as services from "./generated/pb/helloworld_grpc_pb";
+import * as mrrMessages from "./generated/pb/mrr_pb";
+import * as mrrServices from "./generated/pb/mrr_grpc_pb";
+import * as hcMessages from "./generated/pb/healthcheck_pb";
+import * as hcServices from "./generated/pb/healthcheck_grpc_pb";
 import * as grpc from "grpc";
 import path from "path";
 import fs from "fs";
 /**
  * Implements the SayHello RPC method.
  */
-function sayHello(call, callback) {
-  var reply = new messages.HelloReply();
-  reply.setMessage("Hello " + call.request.getName());
+function sendMRR(call, callback) {
+  var reply = new mrrMessages.mrrResponse();
+  reply.setMessage("echo:" + call.request.getMessage());
   callback(null, reply);
 }
 
-// const certsDir = path.join(process.cwd(), "server-certs");
+function check(call, callback) {
+  var reply = new hcMessages.HealthCheckResponse();
+  reply.setStatus(hcMessages.HealthCheckResponse.ServingStatus.SERVING);
+  callback(null, reply);
+}
 
 /**
  * Starts an RPC server that receives requests for the Greeter service at the
@@ -20,7 +26,9 @@ function sayHello(call, callback) {
  */
 function main() {
   var server = new grpc.Server();
-  server.addService(services.GreeterService, {sayHello: sayHello});
+  
+  server.addService(mrrServices.MRRService, {sendMRR: sendMRR});
+  server.addService(hcServices.HealthService, {check: check});
   // server.bind("0.0.0.0:50051", grpc.ServerCredentials.createInsecure());
   server.bind("0.0.0.0:50051", grpc.ServerCredentials.createSsl(    
       fs.readFileSync("certs/server-certs/Group_Microservices.crt"),

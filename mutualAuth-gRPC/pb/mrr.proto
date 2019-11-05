@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package mrr;
+
+service MRR {
+  rpc sendMRR(mrrRequest) returns (mrrResponse) {}
+}
+
+message mrrRequest {
+  string message = 1;
+}
+
+message mrrResponse {
+  string message = 1;
+}

@@ -1,7 +1,7 @@
-import * as mrrMessages from "./generated/pb/mrr_pb";
-import * as mrrServices from "./generated/pb/mrr_grpc_pb";
-import * as hcMessages from "./generated/pb/healthcheck_pb";
-import * as hcServices from "./generated/pb/healthcheck_grpc_pb";
+import * as mrrMessages from "./generated/proto/mrr_pb";
+import * as mrrServices from "./generated/proto/mrr_grpc_pb";
+import * as hcMessages from "./generated/proto/healthcheck_pb";
+import * as hcServices from "./generated/proto/healthcheck_grpc_pb";
 import * as grpc from "grpc";
 import path from "path";
 import fs from "fs";

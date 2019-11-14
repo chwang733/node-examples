@@ -1,5 +1,5 @@
 // package: grpc.health.v1
-// file: pb/healthcheck.proto
+// file: proto/healthcheck.proto
 
 /* tslint:disable */
 

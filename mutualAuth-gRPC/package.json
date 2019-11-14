@@ -7,8 +7,8 @@
     "start": "nodemon -e ts -x ts-node src/server.ts",
     "client": "ts-node src/client.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "grpc-gen:js": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./src/generated/ --grpc_out=./src/generated --plugin=protoc-gen-grpc=`which grpc_tools_node_protoc_plugin` ./pb/*.proto",
-    "grpc-gen:ts": "grpc_tools_node_protoc --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts --ts_out=./src/generated ./pb/*.proto",
+    "grpc-gen:js": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./src/generated/ --grpc_out=./src/generated --plugin=protoc-gen-grpc=`which grpc_tools_node_protoc_plugin` ./proto/*.proto",
+    "grpc-gen:ts": "grpc_tools_node_protoc --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts --ts_out=./src/generated ./proto/*.proto",
     "grpc-gen": "npm run grpc-gen:js && npm run grpc-gen:ts",
     "tslint": "tslint src/**/*.ts tests/**/*.ts"
   },

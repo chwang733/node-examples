@@ -2,28 +2,28 @@
 
 'use strict';
 var grpc = require('grpc');
-var pb_healthcheck_pb = require('../pb/healthcheck_pb.js');
+var proto_healthcheck_pb = require('../proto/healthcheck_pb.js');
 
 function serialize_grpc_health_v1_HealthCheckRequest(arg) {
-  if (!(arg instanceof pb_healthcheck_pb.HealthCheckRequest)) {
+  if (!(arg instanceof proto_healthcheck_pb.HealthCheckRequest)) {
     throw new Error('Expected argument of type grpc.health.v1.HealthCheckRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_grpc_health_v1_HealthCheckRequest(buffer_arg) {
-  return pb_healthcheck_pb.HealthCheckRequest.deserializeBinary(new Uint8Array(buffer_arg));
+  return proto_healthcheck_pb.HealthCheckRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_grpc_health_v1_HealthCheckResponse(arg) {
-  if (!(arg instanceof pb_healthcheck_pb.HealthCheckResponse)) {
+  if (!(arg instanceof proto_healthcheck_pb.HealthCheckResponse)) {
     throw new Error('Expected argument of type grpc.health.v1.HealthCheckResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
 function deserialize_grpc_health_v1_HealthCheckResponse(buffer_arg) {
-  return pb_healthcheck_pb.HealthCheckResponse.deserializeBinary(new Uint8Array(buffer_arg));
+  return proto_healthcheck_pb.HealthCheckResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 
@@ -32,8 +32,8 @@ var HealthService = exports.HealthService = {
     path: '/grpc.health.v1.Health/Check',
     requestStream: false,
     responseStream: false,
-    requestType: pb_healthcheck_pb.HealthCheckRequest,
-    responseType: pb_healthcheck_pb.HealthCheckResponse,
+    requestType: proto_healthcheck_pb.HealthCheckRequest,
+    responseType: proto_healthcheck_pb.HealthCheckResponse,
     requestSerialize: serialize_grpc_health_v1_HealthCheckRequest,
     requestDeserialize: deserialize_grpc_health_v1_HealthCheckRequest,
     responseSerialize: serialize_grpc_health_v1_HealthCheckResponse,

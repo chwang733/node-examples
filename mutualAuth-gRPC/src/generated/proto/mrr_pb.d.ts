@@ -1,5 +1,5 @@
 // package: mrr
-// file: pb/mrr.proto
+// file: proto/mrr.proto
 
 /* tslint:disable */
 
